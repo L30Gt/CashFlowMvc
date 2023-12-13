@@ -1,0 +1,54 @@
+@model CashFlowMvc.Models.LancamentoViewModel
+@{
+    ViewBag.Title = "Editar Lançamento";
+}
+<h2>Editar dados de Lançamento</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "formcontrol", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Tipo de Lançamento:</label>
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.TipoLancamento, Html.GetEnumSelectList(typeof(CashFlowMvc.Models.Enuns.TipoLancamentoEnum)),
+                         "---Selecione---", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Valor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataLancamento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.DataLancamento, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.ValidationMessageFor(model => model.DataLancamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <input type="submit" value="Salvar alterações" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Retornar", "Index")
+</div>

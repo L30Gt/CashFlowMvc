@@ -31,3 +31,4 @@ C:\Users\leeo1\Área de Trabalho\Programming\2sem\DS\Controle Financeiro\CashFlo
 C:\Users\leeo1\Área de Trabalho\Programming\2sem\DS\Controle Financeiro\CashFlowMvc\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\leeo1\Área de Trabalho\Programming\2sem\DS\Controle Financeiro\CashFlowMvc\obj\Debug\net7.0\CashFlowMvc.csproj.AssemblyReference.cache
 C:\Users\leeo1\Área de Trabalho\Programming\2sem\DS\Controle Financeiro\CashFlowMvc\obj\Debug\net7.0\CashFlowMvc.csproj.CopyComplete
+C:\Users\leeo1\Área de Trabalho\Programming\2sem\DS\Controle Financeiro\CashFlowMvc\obj\Debug\net7.0\CashFlowMvc.sourcelink.json

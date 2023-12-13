@@ -1,0 +1,55 @@
+<!--Namespace da classe de Modelo para esta view-->
+@model IEnumerable<CashFlowMvc.Models.LancamentoViewModel>
+<!--Inclua os TempData para Sucesso e Erro aqui, conforme exemplo na view de Autenticação-->
+@if (@TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Mensagem"]</div>
+}
+<!--Configuração para exibir mensagem de erro -->
+@if (@TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["MensagemErro"]</div>
+}
+@{
+    ViewBag.Title = "Lancamentos";
+}<!--Título da página para o navegador-->
+<!--Configuração para exibir mensagem de sucesso -->
+
+<h2>Relação de Lançamentos</h2><!--Título da página-->
+<p> <!--Links apontando para views na mesma pasta-->
+    @Html.ActionLink("Criar Novo Lançamento", "Create")
+</p>
+<table class="table">
+    <tr><!--Títulos das colunas da tabela-->
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
+        <th>@Html.DisplayNameFor(model => model.TipoLancamento)</th>
+        <th>@Html.DisplayNameFor(model => model.Descricao)</th>
+        <th>@Html.DisplayNameFor(model => model.Valor)</th>
+        <th>@Html.DisplayNameFor(model => model.DataLancamento)</th>
+        <th>Categoria</th>
+
+    </tr>
+    <!--Looping para escrever os dados na tabela-->
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>@Html.DisplayFor(modelItem => item.TipoLancamento)</td>
+            <td>@Html.DisplayFor(modelItem => item.Descricao)</td>
+            <td>@Html.DisplayFor(modelItem => item.Valor)</td>
+            <td>@item.DataLancamento.ToString("dd/MM/yyyy")</td>
+            <td></td>
+
+            
+
+            <td><!--Coluna para Links/botões-->
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.Id }
+                         , new { onclick = "return confirm('Deseja realmente deletar este lançamento ?');" })
+            </td>
+        </tr>
+    }
+</table>
