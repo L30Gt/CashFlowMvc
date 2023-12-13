@@ -73,28 +73,24 @@ namespace CashFlowMvc.Controllers
         }
 
         [HttpGet]
-public async Task<ActionResult> Create()
-{
-    // Carregar a lista de categorias da API e armazená-la em ViewBag.Categorias
-    List<CategoriaViewModel> categorias = await CarregarCategoriasDaApi();
-    ViewBag.Categorias = categorias;
+        public async Task<ActionResult> Create()
+        {
+            List<CategoriaViewModel> categorias = await CarregarCategoriasDaApi();
+            ViewBag.Categorias = categorias;
 
-    return View();
-}
+            return View();
+        }
 
-private async Task<List<CategoriaViewModel>> CarregarCategoriasDaApi()
-{
-    // Lógica para obter a lista de categorias da API
-    // Substitua isso com sua lógica real de chamada de API
-    // Exemplo fictício:
-    HttpClient httpClient = new HttpClient();
-    HttpResponseMessage response = await httpClient.GetAsync("http://cashflow.somee.com/CashFlowApi/Categorias/GetAll");
-    string content = await response.Content.ReadAsStringAsync();
+        private async Task<List<CategoriaViewModel>> CarregarCategoriasDaApi()
+        {
+            HttpClient httpClient = new HttpClient();
+            HttpResponseMessage response = await httpClient.GetAsync("http://cashflow.somee.com/CashFlowApi/Categorias/GetAll");
+            string content = await response.Content.ReadAsStringAsync();
 
-    List<CategoriaViewModel> categorias = JsonConvert.DeserializeObject<List<CategoriaViewModel>>(content);
+            List<CategoriaViewModel> categorias = JsonConvert.DeserializeObject<List<CategoriaViewModel>>(content);
 
-    return categorias;
-}
+            return categorias;
+        }
 
 
         [HttpGet]
