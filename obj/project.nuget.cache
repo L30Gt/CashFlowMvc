@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "XBPICLhYxLpCWzXll/hG1jJcdDLWximAebk6oYZgAVdCbbiPuBXxqzsA7kfHAvW99U4lafbIwrlTbic2T3Voog==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\leeo1\\Área de Trabalho\\Programming\\2sem\\DS\\Controle Financeiro\\CashFlowMvc\\CashFlowMvc.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\leeo1\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
